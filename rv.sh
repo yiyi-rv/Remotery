@@ -9,5 +9,5 @@ kcc -profile x86_64-linux-gcc-glibc-gnuc
 kcc -std=gnu11 lib/Remotery.c sample/sample.c -I ./lib -pthread -lm
 timeout 5s ./a.out
 
-rv-html-report $json_out -o $report_out
+touch $json_out && rv-html-report $json_out -o $report_out
 rv-upload-report $report_out
